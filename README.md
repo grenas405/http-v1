@@ -3,6 +3,12 @@
 A runtime-agnostic HTTP toolkit in TypeScript, in the spirit of `jsr:@std/http`, plus the portfolio
 site for **Pedro M. Dominguez** that it serves. The first adapter targets **Cloudflare Workers**.
 
+## Documentation
+
+How the TypeScript gets built and run on Cloudflare is covered in [`docs/`](docs/README.md):
+[build](docs/build.md), [runtime](docs/runtime.md), [develop & deploy](docs/deploy.md) and
+[adapters](docs/adapters.md).
+
 ## Design rules
 
 - **Fetch standards only in the core.** `src/http` uses `Request`, `Response`, `URL`, streams and

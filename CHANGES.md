@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+- Added `docs/`: how `deno bundle` compiles the TypeScript into `dist/worker.js`, how workerd runs
+  it request by request, a `wrangler.jsonc` field reference with troubleshooting, and the adapter
+  contract.
 - `wrangler.jsonc` now runs `deno task bundle` as its build command (watching `src/` in dev), so
   `wrangler dev` and `wrangler deploy` work without a separate bundle step. `deno task dev`/`deploy`
   call wrangler directly.
