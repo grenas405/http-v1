@@ -1,5 +1,11 @@
 # Changes
 
+## Unreleased
+
+- `wrangler.jsonc` now runs `deno task bundle` as its build command (watching `src/` in dev), so
+  `wrangler dev` and `wrangler deploy` work without a separate bundle step. `deno task dev`/`deploy`
+  call wrangler directly.
+
 ## 0.1.0 — 2026-10-12
 
 Initial release.

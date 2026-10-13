@@ -14,8 +14,8 @@
     "lint": "deno lint",
     "fmt": "deno fmt",
     "bundle": "deno bundle --platform=browser --format=esm --minify --output=dist/worker.js src/worker.ts",
-    "dev": "deno task bundle && npx wrangler@4 dev",
-    "deploy": "deno task bundle && npx wrangler@4 deploy",
+    "dev": "npx wrangler@4 dev",
+    "deploy": "npx wrangler@4 deploy",
     "ci": "deno fmt --check && deno lint && deno task check && deno task test"
   },
   "compilerOptions": {

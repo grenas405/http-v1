@@ -80,16 +80,18 @@ lines).
 
 Requires [Deno](https://deno.com) 2.4+ (for `deno bundle`) and Node for `npx wrangler`.
 
-| Task               | What it does                                                  |
-| ------------------ | ------------------------------------------------------------- |
-| `deno task test`   | run the test suite                                            |
-| `deno task ci`     | fmt check, lint, type check, tests                            |
-| `deno task bundle` | bundle `src/worker.ts` (resolving `jsr:` imports) to `dist/`  |
-| `deno task dev`    | bundle, then `wrangler dev` on http://localhost:8787          |
-| `deno task deploy` | bundle, then `wrangler deploy` (needs `wrangler login` first) |
+| Task               | What it does                                                 |
+| ------------------ | ------------------------------------------------------------ |
+| `deno task test`   | run the test suite                                           |
+| `deno task ci`     | fmt check, lint, type check, tests                           |
+| `deno task bundle` | bundle `src/worker.ts` (resolving `jsr:` imports) to `dist/` |
+| `deno task dev`    | `wrangler dev` on http://localhost:8787 (rebuilds on change) |
+| `deno task deploy` | `wrangler deploy` (needs `wrangler login` first)             |
 
-Wrangler uploads the Deno bundle as-is (`no_bundle: true`), and `run_worker_first` routes every
-request — including static files — through the Worker so security headers apply uniformly.
+`wrangler.jsonc` declares `deno task bundle` as its `build.command`, so plain `wrangler dev` /
+`wrangler deploy` build first (dev re-runs it when `src/` changes). Wrangler uploads the Deno bundle
+as-is (`no_bundle: true`), and `run_worker_first` routes every request — including static files —
+through the Worker so security headers apply uniformly.
 
 ## Editing the portfolio
 

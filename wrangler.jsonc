@@ -4,6 +4,11 @@
   // Bundled by `deno task bundle` (resolves jsr: imports); wrangler uploads it as-is.
   "main": "dist/worker.js",
   "no_bundle": true,
+  // Runs before every `wrangler dev` / `wrangler deploy`; dev re-runs it when src/ changes.
+  "build": {
+    "command": "deno task bundle",
+    "watch_dir": "src"
+  },
   "compatibility_date": "2025-09-01",
   "assets": {
     "directory": "./public",
